@@ -3,18 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Finds</title>
+    <title>Amazon Deals</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Header with Categories Button and Search Bar -->
     <header>
-        <h1>Welcome to Amazon Finds</h1>
+        <button onclick="toggleSidebar()">📂 Categories</button>
+        <h1>Top Amazon Deals</h1>
+        <input type="text" id="searchBar" placeholder="Search Products...">
     </header>
-    <section class="product">
-        <img src="product.jpg" alt="Product Image">
-        <h2>Best Wireless Earbuds</h2>
-        <p>Experience high-quality sound with these top-rated earbuds.</p>
-        <a href="https://www.amazon.com/dp/YOUR-PRODUCT-ID?tag=YOUR-AFFILIATE-ID" target="_blank">Buy Now on Amazon</a>
-    </section>
+
+    <div class="container">
+        <!-- Sidebar for Categories -->
+        <div id="categorySidebar" class="sidebar">
+            <button id="closeSidebar" onclick="toggleSidebar()">✖ Close</button>
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#" onclick="showCategory('category1')">Category 1</a></li>
+                <li><a href="#" onclick="showCategory('category2')">Category 2</a></li>
+                <li><a href="#" onclick="showCategory('category3')">Category 3</a></li>
+                <li><a href="#" onclick="showCategory('category4')">Category 4</a></li>
+                <li><a href="#" onclick="showCategory('category5')">Category 5</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content">
+            <!-- Best Amazon Deals Section -->
+            <section id="topProducts">
+                <h2>🔥 Best Deals</h2>
+                <div class="products">
+                    <div class="product"><img src="https://via.placeholder.com/200" alt="Product 1"><h3>Product 1</h3><a href="#">Buy Now</a></div>
+                    <div class="product"><img src="https://via.placeholder.com/200" alt="Product 2"><h3>Product 2</h3><a href="#">Buy Now</a></div>
+                    <div class="product"><img src="https://via.placeholder.com/200" alt="Product 3"><h3>Product 3</h3><a href="#">Buy Now</a></div>
+                    <div class="product"><img src="https://via.placeholder.com/200" alt="Product 4"><h3>Product 4</h3><a href="#">Buy Now</a></div>
+                </div>
+            </section>
+
+            <!-- Category Products Section (Initially Hidden) -->
+            <section id="categories">
+                <h2 id="categoryTitle"></h2>
+                <div id="categoryContent" class="products"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
